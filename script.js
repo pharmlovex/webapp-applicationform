@@ -61,9 +61,25 @@ console.log(formSteps);
 
 
 
-let btnAdd = document.querySelector('.btn btn-secondary');
+let btnAdd = document.querySelector('.btn-add');
 
 btnAdd.addEventListener('click', function(){
     addform = document.getElementById("repeatform").innerHTML
-    return addform;
+    inputform= document.getElementById("repeatform")
+    document.insertBefore(addform, inputform)
 });
+
+
+
+// script>
+// // Create a "li" element:
+// const newNode = document.createElement("li");
+// // Create a text node:
+// const textNode = document.createTextNode("Water");
+// // Append text node to "li" element:
+// newNode.appendChild(textNode);
+
+// // Insert before existing child:
+// const list = document.getElementById("myList");
+// list.insertBefore(newNode, list.children[0]);
+// </script><
