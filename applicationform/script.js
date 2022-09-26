@@ -54,6 +54,45 @@ function updateProgressbar() {
 console.log(formSteps);
 
 
+// let btnAdd = document.querySelector('.btn-add');
+
+// btnAdd.addEventListener('click', function(){
+//     addform = document.getElementById("repeatform").innerHTML
+//     inputform= document.getElementById("repeatform")
+//     document.insertBefore(addform, inputform)
+// });
+
+
+// Add a new form 
+const btn = document.getElementsByClassName("btn-add");
+let counter = 0;
+
+btn.onclick = e => {
+  e.preventDefault();
+  
+  let repeatingField = document.getElementsByClassName("repeat-form");
+  
+  let newRepeating = document.createElement('div');
+  newRepeating.className = "repeat-form";
+  
+  let repeatingForm = `
+      <label> 
+        <span>new node ${1 + counter}</span>
+        <input type="text" name="heading[${1 + counter}]" id="" />
+      </label>
+      <label>
+        <input type="text" name="title[${1 + counter}]" id="" />
+      </label>
+      <label>
+        <input type="text" name="body[${1 + counter}]" id="" />
+      </label>
+  `;
+  
+  newRepeating.innerHTML = repeatingForm;
+  btn.previousElementSibling.appendChild(newRepeating);
+  
+  counter += 1
+}
 
 
 
@@ -61,13 +100,17 @@ console.log(formSteps);
 
 
 
-let btnAdd = document.querySelector('.btn-add');
 
-btnAdd.addEventListener('click', function(){
-    addform = document.getElementById("repeatform").innerHTML
-    inputform= document.getElementById("repeatform")
-    document.insertBefore(addform, inputform)
-});
+
+
+
+
+
+
+
+
+
+
 
 
 
