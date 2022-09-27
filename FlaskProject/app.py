@@ -1,12 +1,12 @@
-from flask import Flask, request, jsonify render_template
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
 memcache={} 
 
 @app.route("/")
-def salute():
-    return "Hello Dayo! Great Job"
+def index():
+    return render_template('index.html')
 
 @app.route("/about")
 def about():
